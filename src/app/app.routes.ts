@@ -25,9 +25,16 @@ export const routes: Routes = [
       },
       {
         path:"rick",
-        title:`osef - ${appTitle}`,
+        title:`Rick - ${appTitle}`,
         canActivate:[AuthGuard],
-        loadComponent: () => import("@/components/rick/rick.component").then(m => m.RickComponent)
+        loadComponent: () => import("@/components/rick/rick.component").then(m => m.RickComponent),
+        children: [
+          {
+            path: "id",
+            title: `Détails - ${appTitle}`,
+            loadComponent: () => import("@/components/rick-details/rick-details.component").then(m => m.RickDetailsComponent)
+          }
+        ]
       },
       {
         path:"nasa",
