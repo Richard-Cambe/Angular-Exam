@@ -1,6 +1,8 @@
 import { Component, OnInit, inject, WritableSignal, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '@/services/api.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @Component({
@@ -12,12 +14,23 @@ import { ApiService } from '@/services/api.service';
 })
 
 export class NasaComponent implements OnInit {
-  private apiService = inject(ApiService);
+  safeUrl?: SafeResourceUrl;
+  //private apiService = inject(ApiService);
   nasaData: WritableSignal<any> = signal(undefined);
+
+  constructor(private apiService:ApiService, private sanitizer:DomSanitizer){}
 
   ngOnInit(): void {
     this.apiService.getNasaPic().subscribe({
-      next: (data: any) => this.nasaData.set(data),
+      next: (data) => {
+        if(data.media_type === "video" && data.url.includes('youtube.com')) {
+          const videoId = new URL(data.url).searchParams.get('v')
+          if(videoId){
+            const embedUrl = `https://www.youtube.com/embed/${videoId}`
+            this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl)
+          }
+        }
+      },
       error: () => console.error("J'ai pas la photo")
     })
   }
