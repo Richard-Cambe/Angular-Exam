@@ -13,7 +13,7 @@
         flex-wrap:wrap;
         gap:1.5rem 2rem;
         padding:1rem .5rem;
-        background-color:#edede8;
+        background-color:#f56606;
         box-shadow:0 .05rem .5rem 0 #c0c0af;
         
         .main-menu-items{
@@ -22,7 +22,7 @@
             
             .main-menu-links{
                 text-decoration:unset;
-                color:#97900f;
+                color:#ffffff;
                 font-weight:700;
                 font-size:1.1rem;
                 letter-spacing:.025rem;

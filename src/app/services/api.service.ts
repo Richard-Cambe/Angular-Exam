@@ -9,19 +9,19 @@ export class ApiService {
   apis: ApiI[] = [
     {
       id: 1,
-      title: "Where is Big Mom ? ",
-      description: "She's a yonko",
+      title: "API Rick & Morty ",
+      description: "IMPRESSIONNEZ-MOI",
       createdDate: new Date(),
       likes: 0,
-      image: "https://i.pinimg.com/736x/d4/8c/60/d48c60c1c76c79e8b6ec91ff8a7212b3.jpg"
+      image: "https://stickerdeco.fr/wp-content/uploads/2018/08/sticker-mural-rick-and-morty-000-2-316x316.jpg"
     },
     {
       id: 2,
-      title: "¿ Dondé està la Big Mom ? ",
-      description: "Dondé",
+      title: "API NASA ",
+      description: "SCIENCE, BICHE",
       createdDate: new Date(),
       likes: 42,
-      image: "https://ih1.redbubble.net/image.4575616820.0941/flat,750x,075,f-pad,750x1000,f8f8f8.u2.jpg"
+      image: "https://www.grapheine.com/wp-content/uploads/2013/10/US-NASA-Seal-logo.jpg"
     },
   ];
 

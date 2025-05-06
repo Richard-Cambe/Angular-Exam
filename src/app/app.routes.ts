@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { AuthGuard } from './guards/auth/auth.guards';
 
 //import { authRoutes } from './routes/auth.routes'
-//import { AuthGuard } from './guards/auth/auth.guard';
 
 const appTitle = "Angular Exam"
 export const routes: Routes = [
@@ -19,7 +19,14 @@ export const routes: Routes = [
       },
       {
         path:"apis",
-        title:`apis`,
+        title:`Liste des apis - ${appTitle}`,
+        canActivate:[AuthGuard],
+        loadComponent: () => import("@/components/api-list/api-list.component").then(m => m.ApiListComponent)
+      },
+      {
+        path:"apis/api/:id",
+        title:`Api - ${appTitle}`,
+        canActivate:[AuthGuard],
         loadComponent: () => import("@/components/api/api.component").then(m => m.ApiComponent)
       },
     

@@ -3,6 +3,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ApiService } from '@/services/api.service';
 import { ApiI } from '@/interfaces/api-interface';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-api',
@@ -20,6 +21,7 @@ export class ApiComponent implements OnInit{
 
   ngOnInit(): void{
     let id: number = Number(this.route.snapshot.params["id"]);
+    console.log(id);
 
     if(!id){
       this.router.navigateByUrl("erreur/404");
