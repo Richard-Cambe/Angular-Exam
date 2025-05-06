@@ -14,7 +14,6 @@ export class ObservablesPreviewComponent implements OnInit {
   @Input({required: true}) observablesPreview!:ObservablesPreview;
 
   ngOnInit(): void {
-    console.log(this.observablesPreview.launchObservableMethod(this.observablesPreview.observableType));
     
   }
 }

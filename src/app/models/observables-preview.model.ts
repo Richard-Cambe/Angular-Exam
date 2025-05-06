@@ -36,8 +36,6 @@ export class ObservablesPreview {
         const isAObject: boolean = nameObject === "A" ? true : false; 
         isAObject ? this.objectACounter++ : this.objectBCounter;
         const objectIndex = isAObject ? this.objectACounter : this.objectBCounter;
-        console.log(`L'objet %c${nameObject} ${objectIndex} est appelé !`, 
-            `text-decoration:underline;color: ${this.translateNameObjectInColor(nameObject)}`);
             isAObject ? this.objectAStyle.gridColumn = `${objectIndex + 1}` : this.objectBStyle.gridColumn = `${objectIndex + 1}`;
 
             if (isAObject) {

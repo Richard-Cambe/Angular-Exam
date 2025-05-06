@@ -9,7 +9,7 @@ import { RickMortyI } from "@/interfaces/rick.interface";
   providedIn: "root"
 })
 export class ApiService {
-  private rickApi = "https://rickandmortyapi.com/api/characters"
+  private rickApi = "https://rickandmortyapi.com/api/character"
   
   private nasaApi ="https://api.nasa.gov/planetary/apod"
   private nasaKey = "7QLy5k8nYf9OJ5o9e0zb08cM6OxLMpcmWppirBPz"

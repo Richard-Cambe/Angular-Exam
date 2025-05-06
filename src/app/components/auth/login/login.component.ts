@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
 
     if(!this.loginForm.valid){
       this.loginForm.markAllAsTouched();
-      console.log("Formulaire invalide, soumission bloquée");
       return;
     }
     const {username, password} = this.loginForm.value;

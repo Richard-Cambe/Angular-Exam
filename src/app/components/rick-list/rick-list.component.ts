@@ -14,7 +14,9 @@ import { RickDetailsComponent } from '../rick-details/rick-details.component';
 export class RickListComponent implements OnInit{
   private RickService = inject(ApiService);
 
-  rickDatalist: WritableSignal<RickMortyI[]|undefined> = signal(undefined);
+  rickDatalist: WritableSignal<RickMortyI[]> = signal([]);
+
+  caCharge: boolean = true
 
   ngOnInit(): void{
 
@@ -22,7 +24,13 @@ export class RickListComponent implements OnInit{
       {
         next: (response) => {
           this.rickDatalist.set(response)
+          this.caCharge = false
+        },
+        error:() => {
+          console.log("Ca a pas trouvé, mec")
+          this.caCharge = false;
         }
+        
       }
     );
   }

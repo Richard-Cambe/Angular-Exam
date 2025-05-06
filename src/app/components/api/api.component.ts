@@ -21,7 +21,6 @@ export class ApiComponent implements OnInit{
 
   ngOnInit(): void{
     let id: number = Number(this.route.snapshot.params["id"]);
-    console.log(id);
 
     if(!id){
       this.router.navigateByUrl("erreur/404");
