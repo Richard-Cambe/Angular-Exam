@@ -1,31 +1,26 @@
-@if(character){
-    <article class="web-snap-card">
-      <h2>
-        {{character.name | uppercase}}
-      </h2>
+<article class="web-snap-card" *ngIf="character">
+  <h2>
+    {{character.name | uppercase}}
+  </h2>
 
-      <img [src]="character.image" />
+  <img [src]="character.image" />
 
-      <p>{{character.status}}</p>
+  <p>{{character.status}}</p>
 
-      <p>{{character.species}}</p>
+  <p>{{character.species}}</p>
 
-      <p>{{character.type}}</p>
+  <p>{{character.type}}</p>
 
-      <p>{{character.gender}}</p>
+  <p>{{character.gender}}</p>
 
-      <a href="/rickmorty/{{character.id}}">Voir le personnage</a>
-    </article>
-  }
-  @else{
-    <article class="web-snap-card">
-      <h2>
-        Erreur
-      </h2>
-      <p>
-        Le composant character a été invoqué sans données !
-      </p>
-    </article>
-  }
+  <a href="/rickmorty/{{character.id}}">Voir le personnage</a>
+</article>
 
-  
+<article class="web-snap-card" *ngIf="!character">
+  <h2>
+    Erreur
+  </h2>
+  <p>
+    Le composant character a été invoqué sans données !
+  </p>
+</article>

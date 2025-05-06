@@ -1,5 +1,3 @@
 <section class="grid">
-    @for(actualRick of rickDatalist(); track idx; let idx = $index){
-      <app-rick-details [character]="actualRick"></app-rick-details>
-    }
-  </section>
+  <app-rick-details *ngFor="let actualRick of rickDataList()" [character]="actualRick"></app-rick-details>
+</section>
