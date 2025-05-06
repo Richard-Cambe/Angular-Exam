@@ -17,8 +17,12 @@ export const routes: Routes = [
         loadChildren:() => import("./routes/auth.routes")
         .then(m=>m.authRoutes)
       },
-
-
+      {
+        path:"apis",
+        title:`apis`,
+        loadComponent: () => import("@/components/api/api.component").then(m => m.ApiComponent)
+      },
+    
       {
         path:"**",
         redirectTo: "erreur/404"

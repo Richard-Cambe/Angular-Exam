@@ -1,4 +1,4 @@
-import { WebSnapI } from '@/interfaces/api.interface';
+import { ApiI } from '@/interfaces/api-interface';
 import { ApiService } from '@/services/api.service';
 import { CommonModule } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';

@@ -29,8 +29,8 @@ export class ApiService {
     return this.apis;
   }
 
-  getApiByID(websnapId: number): ApiI|undefined{
-    const webSnap = this.apis.find(api => api.id === apiId);
+  getApiByID(apiId: number): ApiI|undefined{
+    const api = this.apis.find(api => api.id === apiId);
     if(!api) return undefined;
     return api;
   }
@@ -39,7 +39,7 @@ export class ApiService {
     const api = this.getApiByID(apiId);
 
     if (!api) {
-      throw new Error("Ce websnap n'existe pas !");
+      throw new Error("Cet api n'existe pas !");
     }
 
     switch (api.isLiked) {

@@ -34,7 +34,7 @@ import { Observable, tap } from "rxjs";
                     localStorage.setItem("fake-jwt", user.token);
                     this.authToken.set(user.token);
                     this.isAuthenticated.set(true);
-                    this.router.navigate(["/websnaps"]);
+                    this.router.navigate(["/apis"]);
                 })
             );
         }
