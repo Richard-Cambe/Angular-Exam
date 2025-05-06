@@ -5,6 +5,7 @@ import { FooterComponent } from '@/components/footer/footer.component';
 import { MainNavComponent } from '@/components/main-nav/main-nav.component';
 import { ObservablesPreviewComponent } from './components/observable-preview/observable-preview.component';
 
+
 @Component({
   selector: 'app-root',
   imports: [
@@ -12,7 +13,8 @@ import { ObservablesPreviewComponent } from './components/observable-preview/obs
     HeaderComponent,
     MainNavComponent,
     FooterComponent,
-    ObservablesPreviewComponent
+    ObservablesPreviewComponent,
+    
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

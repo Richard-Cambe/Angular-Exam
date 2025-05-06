@@ -1,0 +1,6 @@
+<section class="grid">
+    @for(actualApi of apiDatalist; track idx; let idx = $index){
+      <app-api-details [api]="actualApi"></app-api-details>
+    }
+  </section>
+  
