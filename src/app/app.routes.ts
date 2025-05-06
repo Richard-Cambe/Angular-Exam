@@ -24,7 +24,13 @@ export const routes: Routes = [
         loadComponent: () => import("@/components/api-list/api-list.component").then(m => m.ApiListComponent)
       },
       {
-        path:"rick",
+        path:"rickmorty",
+        title: `Rick & Morty - ${appTitle}`,
+        canActivate:[AuthGuard],
+        loadComponent:() => import("@/components/rick-list/rick-list.component").then(m => m.RickListComponent)
+      },
+      {
+        path:"rickmorty/:id",
         title:`Rick - ${appTitle}`,
         canActivate:[AuthGuard],
         loadComponent: () => import("@/components/rick/rick.component").then(m => m.RickComponent),

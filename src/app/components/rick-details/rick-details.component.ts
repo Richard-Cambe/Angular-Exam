@@ -11,7 +11,7 @@ import { ApiService } from '@/services/api.service';
   styleUrl: './rick-details.component.css'
 })
 export class RickDetailsComponent implements OnInit {
-  character!: RickMortyI | undefined;
+  @Input() character!: RickMortyI | undefined;
 
   constructor(
     private route: ActivatedRoute,

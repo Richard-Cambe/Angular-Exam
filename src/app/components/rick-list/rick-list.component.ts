@@ -2,10 +2,13 @@ import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core
 import { RickMortyI } from '@/interfaces/rick.interface';
 import { ApiService } from '@/services/api.service';
 import { RickDetailsComponent } from '../rick-details/rick-details.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-rick-list',
+  standalone: true,
   imports: [
+    CommonModule,
     RickDetailsComponent
   ],
   templateUrl: './rick-list.component.html',
@@ -30,7 +33,7 @@ export class RickListComponent implements OnInit{
           console.log("Ca a pas trouvé, mec")
           this.caCharge = false;
         }
-        
+    
       }
     );
   }

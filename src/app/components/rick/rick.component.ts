@@ -23,13 +23,14 @@ export class RickComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
+    console.log('id', id)
 
-    this.rickService.getRickCharacter(id).subscribe(
+    this.rickService.getCharacter(id).subscribe(
       {
         next: (response) => {
           this.character.set(response)
         },
-        error: () => {
+        error:(err) => {
           console.log("erreur : l'api a échoué")
         }
       },
