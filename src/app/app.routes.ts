@@ -24,6 +24,18 @@ export const routes: Routes = [
         loadComponent: () => import("@/components/api-list/api-list.component").then(m => m.ApiListComponent)
       },
       {
+        path:"rick",
+        title:`osef - ${appTitle}`,
+        canActivate:[AuthGuard],
+        loadComponent: () => import("@/components/rick/rick.component").then(m => m.RickComponent)
+      },
+      {
+        path:"nasa",
+        title:`oseb - ${appTitle}`,
+        canActivate:[AuthGuard],
+        loadComponent: () => import("@/components/nasa/nasa.component").then(m => m.NasaComponent)
+      },
+      {
         path:"apis/api/:id",
         title:`Api - ${appTitle}`,
         canActivate:[AuthGuard],
