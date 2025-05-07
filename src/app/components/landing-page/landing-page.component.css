@@ -1,0 +1,17 @@
+h2{
+    color:#f56606;
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+button{
+    align-self: center;
+}
+
+.connect{
+    color: #f56606;
+    text-transform: uppercase;
+}

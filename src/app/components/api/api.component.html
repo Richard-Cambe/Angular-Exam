@@ -5,21 +5,6 @@
       </h2>
     
       <img [src]="api.image" [alt]="api.title" />
-      <p>
-        <small>Créé le : {{api.createdDate | date:"dd/MM/YYYY"}}</small>
-      </p>
-      <p>
-        {{api.description}}
-      </p>
-      <button 
-        (click)="api.id && apiService.onLikeApiByID(api.id)" 
-        [ngClass]="{
-          'like-cta': !api.isLiked,
-          'like-cta-active': api.isLiked
-        }"
-      >
-        {{api.likes | number:"1.0-0"}} 👍🏻
-      </button>
     </article>
   }
   @else{

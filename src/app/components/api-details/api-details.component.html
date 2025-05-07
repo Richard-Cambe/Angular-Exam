@@ -2,12 +2,5 @@
     <h2>
       {{api.title | uppercase}}
     </h2>
-    <p>
-      <small>Créé le : {{api.createdDate | date:"dd/MM/YYYY"}}</small>
-    </p>
-    @if(api.id){
-      <button (click)="onShowApi(api.id)">
-        Voir l'api'
-      </button>
-    }
+    <img *ngIf="api.image" [src]="api.image"/>
   </article>
