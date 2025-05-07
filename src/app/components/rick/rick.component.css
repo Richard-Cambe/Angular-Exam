@@ -1,0 +1,10 @@
+h2{
+    color: #f56606;
+}
+
+article.web-snap-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
