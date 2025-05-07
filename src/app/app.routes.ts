@@ -20,18 +20,16 @@ export const routes: Routes = [
       {
         path:"apis",
         title:`Liste des apis - ${appTitle}`,
-        canActivate:[AuthGuard],
         loadComponent: () => import("@/components/api-list/api-list.component").then(m => m.ApiListComponent)
       },
       {
         path:"rickmorty",
         title: `Rick & Morty - ${appTitle}`,
-        canActivate:[AuthGuard],
         loadComponent:() => import("@/components/rick-list/rick-list.component").then(m => m.RickListComponent)
       },
       {
         path:"rickmorty/:id",
-        title:`Rick - ${appTitle}`,
+        title:`Personnage - ${appTitle}`,
         canActivate:[AuthGuard],
         loadComponent: () => import("@/components/rick/rick.component").then(m => m.RickComponent),
         children: [
@@ -44,14 +42,13 @@ export const routes: Routes = [
       },
       {
         path:"nasa",
-        title:`oseb - ${appTitle}`,
+        title:`Nasa - ${appTitle}`,
         canActivate:[AuthGuard],
         loadComponent: () => import("@/components/nasa/nasa.component").then(m => m.NasaComponent)
       },
       {
         path:"apis/api/:id",
         title:`Api - ${appTitle}`,
-        canActivate:[AuthGuard],
         loadComponent: () => import("@/components/api/api.component").then(m => m.ApiComponent)
       },
     
